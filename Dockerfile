@@ -74,4 +74,5 @@ RUN curl -fsSL -o /image/Log4jPatcher.jar https://github.com/CreeperHost/Log4jPa
 RUN dos2unix /start* /auto/*
 
 ENTRYPOINT [ "/start" ]
+RUN docker run -d -it -p 25565:25565 -e EULA=TRUE itzg/minecraft-server
 HEALTHCHECK --start-period=1m --interval=5s --retries=24 CMD mc-health
